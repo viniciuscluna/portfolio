@@ -1,64 +1,54 @@
-import React, { useState, useEffect } from "react";
-import TextTransition, { presets } from "react-text-transition";
-
-const TEXTS = [
-  "My name is Vinícius Luna",
-  "A Full-Stack Software Engineer",
-  "Experienced on .NET Core",
-  "Experienced on ReactJS",
-  "Experienced on TypeScript",
-];
+import React from "react";
 
 const Career = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
-      5000 // every 5 seconds
-    );
-    return () => clearTimeout(intervalId);
-  }, []);
-
   return (
-    <section id="career" className="text-center">
-      <div>
-        <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Careeer
+      <section  id="career">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
+          <span className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+            Career
+          </span>
         </h1>
-        <h1 className="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white ">
-          <TextTransition
-            className="text-center"
-            springConfig={presets.gentle}
-            inline={true}
-          >
-            {TEXTS[index % TEXTS.length]}
-          </TextTransition>
-        </h1>
-        <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-          Full stack developer in modern technologies with a focus on high
-          performance architecture and scalability
-        </p>
-        <a
-          href="#"
-          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-        >
-          My Career
-          <svg
-            className="w-5 h-5 ml-2 -mr-1"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </a>
-      </div>
-    </section>
+        <div className=" my-[10vh] flex justify-center items-center">
+          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+            <li className="mb-10 ml-4">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                Nov. 2021 - Actual job
+              </time>
+              <div className="max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Dell Technologies - (Software Engineer II)
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Developing global applications within DFS (Dell Financial
+                  Services) for E-Commerce solutions focused on the United
+                  States, Canada and Europe.
+                </p>
+              </div>
+            </li>
+            <li className="ml-4">
+              <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                July 2017 - Nov. 2021
+              </time>
+              <div className="max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Action Cargo - (Software Developer)
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Development of applications aimed at foreign trade, ERP/CRM
+                  systems, creation of financial tools, analytical financial
+                  reports and Human Resources control tools.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
   );
 };
 
