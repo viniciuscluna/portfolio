@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
+import Contact from "./Contact";
 
 const TEXTS = [
   "My name is Vinícius Luna",
@@ -21,7 +22,10 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="m-auto text-center flex flex-col h-screen justify-center items-center">
+    <section
+      id="about"
+      className="m-auto text-center flex flex-col h-screen justify-center items-center"
+    >
       <div>
         <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Hey <span className="text-blue-600 dark:text-blue-500">there!</span>
@@ -31,6 +35,7 @@ const About = () => {
             className="text-center"
             springConfig={presets.gentle}
             inline={true}
+            direction="down"
           >
             {TEXTS[index % TEXTS.length]}
           </TextTransition>
@@ -39,6 +44,13 @@ const About = () => {
           Full stack developer in modern technologies with a focus on high
           performance architecture and scalability
         </p>
+
+        <h2 className="text-2xl font-extrabold dark:text-white mb-2">
+          Reach out me on my social networks!
+        </h2>
+
+        <Contact />
+
         <a
           href="#career"
           className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"

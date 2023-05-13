@@ -16,7 +16,7 @@ const MenuItem = ({ menuName, sectionName, isSelected, setMenu }: Props) => (
   <a
     href={`#${sectionName}`}
     onClick={() => setMenu(0)}
-    className={isSelected ? selectedCss : nonSelectedCss}
+    className={nonSelectedCss}
     aria-current={isSelected ? "page" : "false"}
   >
     {menuName}

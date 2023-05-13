@@ -47,7 +47,10 @@ const Career = () => {
               </div>
             </li>
           </ol>
+
+          
         </div>
+        
       </section>
   );
 };
