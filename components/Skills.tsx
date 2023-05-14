@@ -123,10 +123,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faReact}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       React
                     </span>
                   </dd>
@@ -135,10 +135,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faNodeJs}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       Node
                     </span>
                   </dd>
@@ -147,10 +147,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faSass}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       Sass
                     </span>
                   </dd>
@@ -165,7 +165,7 @@ const Skills = () => {
                     />
                   </dl>
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       TypeScript
                     </span>
                   </dd>
@@ -174,10 +174,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faJs}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       JavaScript
                     </span>
                   </dd>
@@ -198,11 +198,11 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faMicrosoft}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-                      .NET Core
+                    <span className="text-4xl font-extrabold dark:text-white">
+                      NET Core
                     </span>
                   </dd>
                 </div>
@@ -210,10 +210,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faMicrosoft}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl text-center ">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       .NET Framework
                     </span>
                   </dd>
@@ -222,10 +222,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faServer}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       SQL Server
                     </span>
                   </dd>
@@ -234,11 +234,11 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faDatabase}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-                      Mongo DB
+                    <span className="text-4xl font-extrabold dark:text-white">
+                      MongoDB
                     </span>
                   </dd>
                 </div>
@@ -264,7 +264,7 @@ const Skills = () => {
                     />
                   </dl>
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       Azure
                     </span>
                   </dd>
@@ -279,7 +279,7 @@ const Skills = () => {
                     />
                   </dl>
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       PCF
                     </span>
                   </dd>
@@ -288,10 +288,10 @@ const Skills = () => {
                   <FontAwesomeIcon
                     icon={faDocker}
                     className="mb-2"
-                    style={{ fontSize: 100 }}
+                    style={{ fontSize: 100, color: "#fff" }}
                   />
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       Docker
                     </span>
                   </dd>
@@ -306,7 +306,7 @@ const Skills = () => {
                     />
                   </dl>
                   <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                    <span className="text-4xl font-extrabold dark:text-white">
                       Kubernetes
                     </span>
                   </dd>

@@ -46,7 +46,7 @@ const About = () => {
         </p>
 
         <h2 className="text-2xl font-extrabold dark:text-white mb-2">
-          Reach out me on my social networks!
+          Reach me out on my social networks!
         </h2>
 
         <Contact />
