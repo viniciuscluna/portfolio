@@ -13,7 +13,7 @@ const Header = () => {
         <a href="https://flowbite.com/" className="flex items-center">
           <Image
             width={40}
-            height={0}
+            height={40}
             className="h-8 mr-3"
             src="/assets/images/vllogo.png"
             alt="Vinícius Luna"
@@ -57,8 +57,8 @@ const Header = () => {
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <MenuItem
-                sectionName="about"
-                menuName="About Me"
+                sectionName="home"
+                menuName="Home"
                 setMenu={() => setCurrentMenu(0)}
                 isSelected={currentMenu === 0}
               />
@@ -77,6 +77,14 @@ const Header = () => {
                 menuName="Skills"
                 setMenu={() => setCurrentMenu(2)}
                 isSelected={currentMenu === 2}
+              />
+            </li>
+            <li>
+              <MenuItem
+                sectionName="projects"
+                menuName="Projects"
+                setMenu={() => setCurrentMenu(3)}
+                isSelected={currentMenu === 3}
               />
             </li>
           </ul>

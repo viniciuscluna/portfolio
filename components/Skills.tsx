@@ -159,7 +159,7 @@ const Skills = () => {
                   <dl className="mb-3 text-8xl lg:text-8xl">
                     <Image
                       width={100}
-                      height={50}
+                      height={100}
                       src="/assets/images/typescript.png"
                       alt="Typescript Logo"
                     />
@@ -315,19 +315,6 @@ const Skills = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="text-center my-4">
-        <a
-          href="#about"
-          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-        >
-          Go to Top
-          <FontAwesomeIcon
-            className="ml-2 mt-1"
-            icon={faArrowUp}
-            style={{ fontSize: 15 }}
-          />
-        </a>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
 import Contact from "./Contact";
+import classNames from "classnames";
 
 const TEXTS = [
   "My name is Vinícius Luna",
@@ -23,8 +24,11 @@ const About = () => {
 
   return (
     <section
-      id="about"
-      className="m-auto text-center flex flex-col h-screen justify-center items-center"
+      id="home"
+      className={classNames(
+        "bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]",
+        "m-auto text-center flex flex-col h-screen justify-center items-center"
+      )}
     >
       <div>
         <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
