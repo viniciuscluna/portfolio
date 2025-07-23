@@ -1,317 +1,187 @@
-import {
-  faNodeJs,
-  faReact,
-  faSass,
-  faJs,
-  faMicrosoft,
-  faDocker,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faServer,
-  faDatabase,
-  faArrowUp,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classNames from "classnames";
-import Image from "next/image";
-import React, { useMemo, useState } from "react";
+import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Skills = () => {
-  const [currentTab, setCurrentTab] = useState<number>(0);
-  const unselectedButton =
-    "inline-block w-full p-4 rounded-tl-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600";
-  const selectedButton =
-    "inline-block w-full p-4 rounded-tl-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500";
-
-  const isFrontEndSelected = useMemo(() => currentTab === 0, [currentTab]);
-  const isBackEndSelected = useMemo(() => currentTab === 1, [currentTab]);
-  const isCloudSelected = useMemo(() => currentTab === 2, [currentTab]);
+  const { t } = useLanguage();
+  
+  const skillCategories = [
+    {
+      title: t('skills.languages'),
+      icon: "💻",
+      skills: [
+        { name: "Go", level: 85, color: "from-blue-500 to-cyan-500" },
+        { name: "C#", level: 95, color: "from-purple-500 to-indigo-500" },
+        { name: ".NET", level: 95, color: "from-purple-600 to-blue-600" },
+        { name: "Java", level: 80, color: "from-orange-500 to-red-500" },
+        { name: "TypeScript", level: 90, color: "from-blue-600 to-purple-600" },
+        { name: "JavaScript", level: 90, color: "from-yellow-500 to-orange-500" },
+      ]
+    },
+    {
+      title: t('skills.frontend'),
+      icon: "🎨",
+      skills: [
+        { name: "ReactJS", level: 90, color: "from-cyan-500 to-blue-500" },
+        { name: "NextJS", level: 85, color: "from-gray-800 to-gray-600" },
+        { name: "Redux Toolkit", level: 80, color: "from-purple-600 to-pink-600" },
+        { name: "Zustand", level: 75, color: "from-orange-500 to-red-500" },
+        { name: "React Testing Library", level: 80, color: "from-green-500 to-teal-500" },
+        { name: "SASS", level: 85, color: "from-pink-500 to-purple-500" },
+      ]
+    },
+    {
+      title: t('skills.backend'),
+      icon: "⚙️",
+      skills: [
+        { name: "Web API", level: 95, color: "from-blue-500 to-purple-500" },
+        { name: "MVC", level: 90, color: "from-indigo-500 to-purple-500" },
+        { name: "Entity Framework", level: 90, color: "from-purple-500 to-pink-500" },
+        { name: "Dapper", level: 85, color: "from-green-500 to-blue-500" },
+        { name: "RabbitMQ", level: 75, color: "from-orange-500 to-red-500" },
+        { name: "SignalR", level: 70, color: "from-cyan-500 to-teal-500" },
+      ]
+    },
+    {
+      title: t('skills.architecture'),
+      icon: "🏗️",
+      skills: [
+        { name: "Microservices", level: 85, color: "from-purple-500 to-indigo-500" },
+        { name: "Domain-Driven Design", level: 80, color: "from-blue-500 to-cyan-500" },
+        { name: "SOLID Principles", level: 90, color: "from-green-500 to-teal-500" },
+        { name: "Dependency Injection", level: 90, color: "from-purple-600 to-pink-600" },
+        { name: "Factory Pattern", level: 85, color: "from-orange-500 to-red-500" },
+        { name: "Hexagonal Architecture", level: 75, color: "from-indigo-500 to-purple-500" },
+      ]
+    },
+    {
+      title: t('skills.databases'),
+      icon: "🗄️",
+      skills: [
+        { name: "SQL Server", level: 90, color: "from-red-500 to-orange-500" },
+        { name: "MySQL", level: 85, color: "from-blue-500 to-cyan-500" },
+        { name: "PostgreSQL", level: 80, color: "from-blue-600 to-indigo-600" },
+        { name: "MongoDB", level: 75, color: "from-green-500 to-teal-500" },
+        { name: "Elasticsearch", level: 70, color: "from-yellow-500 to-orange-500" },
+      ]
+    },
+    {
+      title: t('skills.cloud'),
+      icon: "☁️",
+      skills: [
+        { name: "Azure", level: 85, color: "from-blue-500 to-cyan-500" },
+        { name: "AWS", level: 70, color: "from-orange-500 to-yellow-500" },
+        { name: "Kubernetes", level: 75, color: "from-blue-600 to-purple-600" },
+        { name: "Git Flow", level: 90, color: "from-gray-700 to-gray-500" },
+        { name: "Azure DevOps", level: 85, color: "from-blue-500 to-indigo-500" },
+        { name: "GitLab", level: 80, color: "from-orange-600 to-red-600" },
+      ]
+    },
+  ];
 
   return (
-    <section>
-      <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
-        <span
-          id="skills"
-          className="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600"
-        >
-          Skills
-        </span>
-      </h1>
-      <div className=" my-[10vh] flex justify-center items-center">
-        <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <div className="sm:hidden">
-            <label htmlFor="tabs" className="sr-only">
-              Select tab
-            </label>
-            <select
-              id="tabs"
-              className="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                setCurrentTab(parseInt(e.target.value))
-              }
-            >
-              <option value={0}>Front-end</option>
-              <option value={1}>Back-end</option>
-              <option value={2}>Cloud</option>
-            </select>
-          </div>
-          <ul
-            className="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400"
-            id="fullWidthTab"
-            data-tabs-toggle="#fullWidthTabContent"
-            role="tablist"
-          >
-            <li className="w-full">
-              <button
-                id="front-tab"
-                type="button"
-                role="tab"
-                aria-controls="front-tab"
-                onClick={() => setCurrentTab(0)}
-                aria-selected={isFrontEndSelected}
-                className={
-                  isFrontEndSelected ? selectedButton : unselectedButton
-                }
-              >
-                Front-end
-              </button>
-            </li>
-            <li className="w-full">
-              <button
-                id="back-tab"
-                type="button"
-                role="tab"
-                aria-controls="back-tab"
-                onClick={() => setCurrentTab(1)}
-                aria-selected={isBackEndSelected}
-                className={
-                  isBackEndSelected ? selectedButton : unselectedButton
-                }
-              >
-                Back-end
-              </button>
-            </li>
-            <li className="w-full">
-              <button
-                id="cloud-tab"
-                type="button"
-                role="tab"
-                aria-controls="cloud-tab"
-                onClick={() => setCurrentTab(2)}
-                aria-selected={isCloudSelected}
-                className={isCloudSelected ? selectedButton : unselectedButton}
-              >
-                Cloud
-              </button>
-            </li>
-          </ul>
-          <div
-            id="fullWidthTabContent"
-            className="border-t border-gray-200 dark:border-gray-600"
-          >
+    <section id="skills" className="py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            {t('skills.title')} <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Skills</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            {t('skills.subtitle')}
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skillCategories.map((category) => (
             <div
-              className={classNames(
-                "p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800",
-                isFrontEndSelected ? "" : "hidden"
-              )}
-              id="front-tab"
-              role="tabpanel"
-              aria-labelledby="front-tab"
+              key={category.title}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
             >
-              <dl className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-5 dark:text-white sm:p-8 ">
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faReact}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      React
-                    </span>
-                  </dd>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faNodeJs}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      Node
-                    </span>
-                  </dd>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faSass}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      Sass
-                    </span>
-                  </dd>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <dl className="mb-3 text-8xl lg:text-8xl">
-                    <Image
-                      width={100}
-                      height={100}
-                      src="/assets/images/typescript.png"
-                      alt="Typescript Logo"
-                    />
-                  </dl>
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      TypeScript
-                    </span>
-                  </dd>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faJs}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      JavaScript
-                    </span>
-                  </dd>
-                </div>
-              </dl>
+              <div className="flex items-center mb-6">
+                <div className="text-3xl mr-3">{category.icon}</div>
+                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+              </div>
+              
+              <div className="space-y-4">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="group">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-gray-300 font-medium text-sm">{skill.name}</span>
+                      <span className="text-gray-400 text-xs">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                      <div
+                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out group-hover:shadow-lg`}
+                        style={{ 
+                          width: `${skill.level}%`,
+                          boxShadow: `0 0 10px rgba(139, 92, 246, 0.3)`
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div
-              className={classNames(
-                "p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800",
-                isBackEndSelected ? "" : "hidden"
-              )}
-              id="back-tab"
-              role="tabpanel"
-              aria-labelledby="back-tab"
-            >
-              <dl className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-4 dark:text-white sm:p-8 ">
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faMicrosoft}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      NET Core
-                    </span>
-                  </dd>
+          ))}
+        </div>
+
+        {/* Professional Summary */}
+        <div className="mt-16 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('skills.summary.title')}</h3>
+          <p className="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
+            {t('skills.summary.text')}
+          </p>
+        </div>
+
+        {/* Certifications */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">{t('skills.certifications')} & {t('skills.languages.spoken')}</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h4 className="text-lg font-bold text-white mb-4 flex items-center">
+                <span className="text-2xl mr-3">🏆</span>
+                {t('skills.certifications')}
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Microsoft Azure Fundamentals</span>
+                  <span className="text-blue-400 text-sm">2022</span>
                 </div>
-                <div className="flex flex-col items-center justify-center mt-6">
-                  <FontAwesomeIcon
-                    icon={faMicrosoft}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl text-center ">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      .NET Framework
-                    </span>
-                  </dd>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">MTA: Software Development Fundamentals</span>
+                  <span className="text-blue-400 text-sm">2021</span>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faServer}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      SQL Server
-                    </span>
-                  </dd>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Cambridge English: First (FCE)</span>
+                  <span className="text-blue-400 text-sm">2016</span>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faDatabase}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      MongoDB
-                    </span>
-                  </dd>
-                </div>
-              </dl>
+              </div>
             </div>
-            <div
-              className={classNames(
-                "p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800",
-                isCloudSelected ? "" : "hidden"
-              )}
-              id="cloud-tab"
-              role="tabpanel"
-              aria-labelledby="cloud-tab"
-            >
-              <dl className="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-4 dark:text-white sm:p-8 ">
-                <div className="flex flex-col items-center justify-center">
-                  <dl className="mb-3 text-8xl lg:text-8xl">
-                    <Image
-                      width={100}
-                      height={50}
-                      src="/assets/images/azure.png"
-                      alt="Typescript Logo"
-                    />
-                  </dl>
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      Azure
-                    </span>
-                  </dd>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h4 className="text-lg font-bold text-white mb-4 flex items-center">
+                <span className="text-2xl mr-3">🌐</span>
+                {t('skills.languages.spoken')}
+              </h4>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-gray-300">{t('skills.portuguese')}</span>
+                    <span className="text-green-400 font-medium">{t('skills.native')}</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="h-full bg-gradient-to-r from-green-500 to-teal-500 rounded-full" style={{ width: '100%' }}></div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                  <dl className="mb-3 text-8xl lg:text-8xl">
-                    <Image
-                      width={100}
-                      height={50}
-                      src="/assets/images/pcf.png"
-                      alt="Typescript Logo"
-                    />
-                  </dl>
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      PCF
-                    </span>
-                  </dd>
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-gray-300">{t('skills.english')}</span>
+                    <span className="text-blue-400 font-medium">{t('skills.advanced')}</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style={{ width: '90%' }}></div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                  <FontAwesomeIcon
-                    icon={faDocker}
-                    className="mb-2"
-                    style={{ fontSize: 100, color: "#fff" }}
-                  />
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      Docker
-                    </span>
-                  </dd>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <dl className="mb-3 text-8xl lg:text-8xl">
-                    <Image
-                      width={100}
-                      height={50}
-                      src="/assets/images/kubernetes.png"
-                      alt="Typescript Logo"
-                    />
-                  </dl>
-                  <dd className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-1sm lg:text-1xl">
-                    <span className="text-4xl font-extrabold dark:text-white">
-                      Kubernetes
-                    </span>
-                  </dd>
-                </div>
-              </dl>
+              </div>
             </div>
           </div>
         </div>

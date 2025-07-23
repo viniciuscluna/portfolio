@@ -6,11 +6,13 @@ import Skills from "./Skills";
 import TopButton from "./TopButton";
 
 const Content = () => (
-  <div className="h-screen">
+  <div className="bg-slate-900">
     <About />
-    <Career />
-    <Skills />
-    <Projects />
+    <div className="bg-gradient-to-b from-slate-900 to-gray-900">
+      <Career />
+      <Skills />
+      <Projects />
+    </div>
     <TopButton />
     <Footer />
   </div>
