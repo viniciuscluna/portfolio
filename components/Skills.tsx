@@ -124,14 +124,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Professional Summary */}
-        <div className="mt-16 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">{t('skills.summary.title')}</h3>
-          <p className="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
-            {t('skills.summary.text')}
-          </p>
-        </div>
-
         {/* Certifications */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">{t('skills.certifications')} & {t('skills.languages.spoken')}</h3>

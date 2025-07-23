@@ -51,7 +51,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">{t('footer.connect')}</h3>
           <div className="flex space-x-4">
             <a
-              href="https://www.linkedin.com/in/vinicius-luna-80014914a/"
+              href="https://www.linkedin.com/in/viniciuscluna"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3 hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300 group"
@@ -71,7 +71,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="mailto:viniciuscluna@hotmail.com"
+              href="mailto:viniciuscluna@gmail.com"
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-3 hover:bg-purple-600/20 hover:border-purple-500/50 transition-all duration-300 group"
             >
               <svg className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

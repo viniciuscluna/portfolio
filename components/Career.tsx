@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Career = () => {
@@ -30,8 +31,14 @@ const Career = () => {
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-purple-400 text-sm font-medium">{t('career.mercadolibre.period')}</span>
-                    <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">ML</span>
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center p-1">
+                      <Image
+                        src="/assets/images/mercado-livre.png"
+                        alt="Mercado Livre"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{t('career.mercadolibre.role')}</h3>
@@ -55,8 +62,14 @@ const Career = () => {
               <div className="ml-12 md:ml-0 md:w-1/2 md:ml-auto md:pl-8">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">D</span>
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center p-1">
+                      <Image
+                        src="/assets/images/dell.png"
+                        alt="Dell Technologies"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
                     </div>
                     <span className="text-blue-400 text-sm font-medium">{t('career.dell.period')}</span>
                   </div>
@@ -83,8 +96,14 @@ const Career = () => {
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-green-400 text-sm font-medium">{t('career.actioncargo.period')}</span>
-                    <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">A</span>
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center p-1">
+                      <Image
+                        src="/assets/images/action-cargo.png"
+                        alt="Action Cargo"
+                        width={24}
+                        height={24}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">{t('career.actioncargo.role')}</h3>
@@ -110,8 +129,14 @@ const Career = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {/* FIAP */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-lg font-bold">🎓</span>
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 p-2">
+                <Image
+                  src="/assets/images/fiap.jpg"
+                  alt="FIAP"
+                  width={32}
+                  height={32}
+                  className="object-contain rounded"
+                />
               </div>
               <h4 className="text-lg font-bold text-white mb-2">{t('career.fiap.title')}</h4>
               <p className="text-purple-400 font-medium mb-2">FIAP</p>
@@ -120,8 +145,14 @@ const Career = () => {
 
             {/* FATEC */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-lg font-bold">F</span>
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 p-2">
+                <Image
+                  src="/assets/images/fatec.jpg"
+                  alt="FATEC"
+                  width={32}
+                  height={32}
+                  className="object-contain rounded"
+                />
               </div>
               <h4 className="text-lg font-bold text-white mb-2">{t('career.fatec.title')}</h4>
               <p className="text-blue-400 font-medium mb-2">FATEC Zona Sul</p>

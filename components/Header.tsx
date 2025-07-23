@@ -20,6 +20,47 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Auto-detect current section based on scroll position
+  useEffect(() => {
+    const sections = [
+      { id: 'home', index: 0 },
+      { id: 'about', index: 1 },
+      { id: 'skills', index: 2 },
+      { id: 'career', index: 3 },
+      { id: 'projects', index: 4 },
+      { id: 'contact', index: 5 }
+    ];
+
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 100; // Offset for header
+      
+      // Find the current section based on scroll position
+      let currentSection = sections[0]; // Default to home
+      
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          if (scrollPosition >= offsetTop) {
+            currentSection = section;
+          }
+        }
+      });
+      
+      setCurrentMenu(currentSection.index);
+    };
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScrollSpy);
+    
+    // Call once to set initial state
+    handleScrollSpy();
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollSpy);
+    };
+  }, []);
+
   return (
     <nav className={classNames(
       "fixed w-full z-50 top-0 left-0 transition-all duration-300",
@@ -35,7 +76,7 @@ const Header = () => {
               width={40}
               height={40}
               className="h-10 w-10 rounded-full ring-2 ring-purple-500/50 group-hover:ring-purple-400 transition-all duration-300"
-              src="/assets/images/vllogo.png"
+              src="/assets/images/vl_logo2.png"
               alt="Vinícius Luna"
             />
             <span className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">

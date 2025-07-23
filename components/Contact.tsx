@@ -22,7 +22,7 @@ const Contact = () => {
       </a>
       <a
         className="group flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
-        href="https://www.linkedin.com/in/vinicius-luna-5b1262163/"
+        href="https://www.linkedin.com/in/viniciuscluna"
         target="_blank"
         rel="noopener noreferrer"
       >
