@@ -1,38 +1,248 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💼 Vinícius Luna - Portfolio
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+![Portfolio Banner](https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge&logo=vercel)
+![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.6-38B2AC?style=for-the-badge&logo=tailwind-css)
+
+**Um portfólio moderno e responsivo construído com Next.js, TypeScript e Tailwind CSS**
+
+[🌐 Ver Portfolio](https://portfolio-viniciuscluna.vercel.app) • [📧 Contato](mailto:viniciuscluna@example.com) • [💼 LinkedIn](https://linkedin.com/in/viniciuscluna)
+
+</div>
+
+---
+
+## ✨ **Sobre o Projeto**
+
+Este é meu portfólio pessoal, desenvolvido para apresentar minha jornada como **Software Engineer** e **Software Architect**. O site foi construído com foco em **performance**, **acessibilidade** e **experiência do usuário**.
+
+### 🎯 **Principais Features**
+
+- 🌍 **Multilíngue** - Suporte completo para Português e Inglês
+- 📱 **Responsivo** - Design adaptativo para todos os dispositivos
+- ⚡ **Performance Otimizada** - Carregamento rápido e bundle otimizado
+- 🎨 **Animações Suaves** - Micro-interações e transições elegantes
+- 🔍 **SEO Otimizado** - Meta tags e estrutura semântica
+- ♿ **Acessível** - Seguindo as melhores práticas de acessibilidade
+
+---
+
+## 🛠️ **Tech Stack**
+
+### **Frontend**
+- **Framework:** Next.js 14.2.5 (App Router)
+- **Linguagem:** TypeScript 5.5.3
+- **Styling:** Tailwind CSS 3.4.6
+- **Ícones:** Font Awesome 6.6.0
+- **Animações:** CSS Animations + Tailwind
+
+### **Desenvolvimento**
+- **Linting:** ESLint + Next.js Config
+- **Formatação:** Prettier (configuração personalizada)
+- **Build Tool:** Next.js Build System
+- **Package Manager:** Yarn
+
+### **Deploy & Infraestrutura**
+- **Hospedagem:** Vercel
+- **CI/CD:** GitHub Actions + Vercel Integration
+- **Runtime:** Node.js 22.x
+
+---
+
+## 🚀 **Começando**
+
+### **Pré-requisitos**
+- Node.js 22.x ou superior
+- Yarn 1.22.x ou superior
+
+### **Instalação**
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/viniciuscluna/portfolio.git
+   cd portfolio
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   yarn install
+   ```
+
+3. **Execute o servidor de desenvolvimento**
+   ```bash
+   yarn dev
+   ```
+
+4. **Abra no navegador**
+   - Acesse [http://localhost:3000](http://localhost:3000)
+
+### **Scripts Disponíveis**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Desenvolvimento
+yarn dev          # Inicia o servidor de desenvolvimento
+
+# Build
+yarn build        # Cria build de produção
+yarn start        # Inicia servidor de produção
+
+# Qualidade de Código
+yarn lint         # Executa o linter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📁 **Estrutura do Projeto**
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+portfolio/
+├── 📄 README.md
+├── 📄 package.json
+├── 📄 next.config.js
+├── 📄 tailwind.config.js
+├── 📄 tsconfig.json
+├── 📄 vercel.json
+├── 📄 .nvmrc
+├── 🗂️ components/           # Componentes React reutilizáveis
+│   ├── About.tsx           # Seção hero/apresentação
+│   ├── AboutSection.tsx    # Sobre mim detalhado
+│   ├── Career.tsx          # Experiência profissional
+│   ├── Contact.tsx         # Links de contato
+│   ├── Projects.tsx        # Projetos destacados
+│   ├── Skills.tsx          # Habilidades técnicas
+│   └── ...
+├── 🗂️ contexts/            # Contextos React
+│   └── LanguageContext.tsx # Gerenciamento de idioma
+├── 🗂️ pages/               # Rotas Next.js
+│   ├── _app.tsx           # App wrapper
+│   ├── _document.tsx      # Document customizado
+│   └── index.tsx          # Página principal
+├── 🗂️ public/             # Assets estáticos
+│   └── assets/images/     # Imagens do projeto
+└── 🗂️ styles/             # Estilos globais
+    └── globals.css        # CSS global + Tailwind
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🎨 **Design System**
 
-## Learn More
+### **Paleta de Cores**
+- **Primária:** Blue to Cyan Gradient (`from-blue-600 to-cyan-600`)
+- **Secundária:** Teal accents (`text-teal-500`)
+- **Background:** Slate variants (`bg-slate-900`)
+- **Texto:** White to Gray scale
 
-To learn more about Next.js, take a look at the following resources:
+### **Tipografia**
+- **Headings:** Font weights 700-900
+- **Body:** Font weights 400-600
+- **Responsive:** Escalas sm/md/lg
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Componentes**
+- **Buttons:** Gradient backgrounds com hover effects
+- **Cards:** Backdrop blur com bordas sutis
+- **Pills:** Tech stack badges com hover animations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌍 **Internacionalização**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O projeto suporta dois idiomas através de contexto React:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 🇧🇷 **Português (pt)** - Idioma padrão
+- 🇺🇸 **English (en)** - Idioma alternativo
+
+### **Estrutura de Tradução**
+```typescript
+const translations = {
+  pt: {
+    'hero.greeting': 'Olá, eu sou',
+    'hero.name': 'Vinícius Luna',
+    // ...
+  },
+  en: {
+    'hero.greeting': 'Hello, I am',
+    'hero.name': 'Vinícius Luna',
+    // ...
+  }
+}
+```
+
+---
+
+## ⚡ **Otimizações de Performance**
+
+### **Bundle Otimizations**
+- ✅ Remoção de dependências pesadas (`react-text-transition`)
+- ✅ Tree-shaking automático
+- ✅ Code splitting por páginas
+- ✅ Otimização de imagens Next.js
+
+### **Runtime Optimizations**
+- ✅ Eliminação de re-renders desnecessários
+- ✅ Uso de CSS puro para animações
+- ✅ Lazy loading de componentes
+- ✅ Preload de recursos críticos
+
+### **Build Stats**
+```
+Route (pages)                Size     First Load JS
+┌ ○ /                       19.7 kB      119 kB
+├   /_app                    0 B        99.6 kB
+└ ○ /404                     180 B      99.7 kB
++ First Load JS shared       108 kB
+```
+
+---
+
+## 📱 **Responsividade**
+
+O design é mobile-first com breakpoints Tailwind:
+
+- **sm:** ≥ 640px (Tablets)
+- **md:** ≥ 768px (Desktop pequeno)
+- **lg:** ≥ 1024px (Desktop médio)
+- **xl:** ≥ 1280px (Desktop grande)
+
+---
+
+## 🤝 **Contribuindo**
+
+Embora este seja um projeto pessoal, sugestões e melhorias são sempre bem-vindas!
+
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/amazing-feature`)
+3. Commit suas mudanças (`git commit -m 'Add amazing feature'`)
+4. Push para a branch (`git push origin feature/amazing-feature`)
+5. Abra um Pull Request
+
+---
+
+## 📄 **Licença**
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+---
+
+## 📞 **Contato**
+
+**Vinícius Luna** - Software Engineer & Architect
+
+- 💼 [LinkedIn](https://linkedin.com/in/viniciuscluna)
+- 🐙 [GitHub](https://github.com/viniciuscluna)
+- 📧 [Email](mailto:viniciuscluna@example.com)
+- 🌐 [Portfolio](https://portfolio-viniciuscluna.vercel.app)
+
+---
+
+<div align="center">
+
+**⭐ Se este projeto te ajudou, considere dar uma estrela!**
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=viniciuscluna.portfolio)
+![GitHub stars](https://img.shields.io/github/stars/viniciuscluna/portfolio?style=social)
+
+</div>

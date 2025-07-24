@@ -11,11 +11,18 @@ const About = () => {
       className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-8 sm:py-0 pt-20 sm:pt-22"
       style={{ overflowX: 'hidden', width: '100vw', maxWidth: '100%' }}
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 w-full h-full opacity-20" style={{ overflow: 'hidden' }}>
-        <div className="absolute top-[5%] left-[5%] w-32 sm:w-48 md:w-72 h-32 sm:h-48 md:h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-[10%] right-[5%] w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute bottom-[10%] left-[10%] w-40 sm:w-56 md:w-80 h-40 sm:h-56 md:h-80 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+      {/* Animated Background - Hidden on mobile for performance */}
+      <div className="absolute inset-0 w-full h-full opacity-20 hidden sm:block" style={{ overflow: 'hidden' }}>
+        <div className="absolute top-[5%] left-[5%] w-48 md:w-72 h-48 md:h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute top-[10%] right-[5%] w-64 md:w-96 h-64 md:h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute bottom-[10%] left-[10%] w-56 md:w-80 h-56 md:h-80 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
+      </div>
+
+      {/* Static background for mobile - Better performance */}
+      <div className="absolute inset-0 w-full h-full opacity-10 sm:hidden">
+        <div className="absolute top-[10%] left-[10%] w-40 h-40 bg-blue-500/30 rounded-full filter blur-2xl"></div>
+        <div className="absolute top-[20%] right-[10%] w-32 h-32 bg-cyan-300/30 rounded-full filter blur-2xl"></div>
+        <div className="absolute bottom-[20%] left-[20%] w-36 h-36 bg-teal-300/30 rounded-full filter blur-2xl"></div>
       </div>
 
       {/* Content */}
@@ -27,7 +34,7 @@ const About = () => {
           </h1>
           <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center">
             <h2 className="text-2xl sm:text-4xl md:text-6xl font-black">
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 bg-clip-text text-transparent sm:animate-pulse">
                 {t('hero.name')}
               </span>
             </h2>
@@ -87,10 +94,10 @@ const About = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
+      {/* Scroll Indicator - Optimized for mobile */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce sm:animate-bounce z-0">
         <div className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 sm:animate-pulse"></div>
         </div>
       </div>
     </section>
