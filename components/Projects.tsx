@@ -5,7 +5,7 @@ const Projects = () => {
   const { t } = useLanguage();
   
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

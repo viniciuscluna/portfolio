@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-8 sm:py-0 pt-24 sm:pt-28"
+      className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-8 sm:py-0 pt-20 sm:pt-22"
       style={{ overflowX: 'hidden', width: '100vw', maxWidth: '100%' }}
     >
       {/* Animated Background */}

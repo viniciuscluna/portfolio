@@ -9,7 +9,7 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {language === 'pt' ? 'Sobre' : 'About'} <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Mim</span>
+            {language === 'pt' ? 'Sobre' : 'About'} <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Mim</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {language === 'pt' 
@@ -44,25 +44,25 @@ const AboutSection = () => {
           {/* Stats or Skills */}
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">7+</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">7+</div>
               <div className="text-gray-300 text-sm">
                 {language === 'pt' ? 'Anos de Experiência' : 'Years of Experience'}
               </div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">3</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">3</div>
               <div className="text-gray-300 text-sm">
                 {language === 'pt' ? 'Empresas de Tecnologia' : 'Tech Companies'}
               </div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">15+</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">15+</div>
               <div className="text-gray-300 text-sm">
                 {language === 'pt' ? 'Tecnologias' : 'Technologies'}
               </div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-              <div className="text-3xl font-bold text-purple-400 mb-2">5</div>
+              <div className="text-3xl font-bold text-blue-400 mb-2">5</div>
               <div className="text-gray-300 text-sm">
                 {language === 'pt' ? 'Certificações' : 'Certifications'}
               </div>
