@@ -10,7 +10,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {language === 'pt' ? 'Entre em' : 'Get in'} <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">{language === 'pt' ? 'Contato' : 'Touch'}</span>
+            {language === 'pt' ? 'Entre em' : 'Get in'} <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">{language === 'pt' ? 'Contato' : 'Touch'}</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {language === 'pt' 

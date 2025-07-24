@@ -75,11 +75,11 @@ const Header = () => {
             <Image
               width={40}
               height={40}
-              className="h-10 w-10 rounded-full ring-2 ring-purple-500/50 group-hover:ring-purple-400 transition-all duration-300"
+              className="h-10 w-10 rounded-full ring-2 ring-blue-500/50 group-hover:ring-blue-400 transition-all duration-300"
               src="/assets/images/vl_logo2.png"
               alt="Vinícius Luna"
             />
-            <span className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
+            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
               Vinícius Luna
             </span>
           </a>

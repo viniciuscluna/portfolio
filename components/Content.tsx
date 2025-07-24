@@ -8,10 +8,10 @@ import Skills from "./Skills";
 import TopButton from "./TopButton";
 
 const Content = () => (
-  <div className="bg-slate-900">
+  <div className="w-full bg-slate-900">
     <About />
     <AboutSection />
-    <div className="bg-gradient-to-b from-slate-900 to-gray-900">
+    <div className="w-full bg-gradient-to-b from-slate-900 to-gray-900">
       <Skills />
       <Career />
       <Projects />

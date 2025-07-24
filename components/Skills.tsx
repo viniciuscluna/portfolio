@@ -10,10 +10,10 @@ const Skills = () => {
       icon: "💻",
       skills: [
         { name: "Go", level: 85, color: "from-blue-500 to-cyan-500" },
-        { name: "C#", level: 95, color: "from-purple-500 to-indigo-500" },
-        { name: ".NET", level: 95, color: "from-purple-600 to-blue-600" },
+        { name: "C#", level: 95, color: "from-blue-500 to-indigo-500" },
+        { name: ".NET", level: 95, color: "from-blue-600 to-cyan-600" },
         { name: "Java", level: 80, color: "from-orange-500 to-red-500" },
-        { name: "TypeScript", level: 90, color: "from-blue-600 to-purple-600" },
+        { name: "TypeScript", level: 90, color: "from-blue-600 to-teal-600" },
         { name: "JavaScript", level: 90, color: "from-yellow-500 to-orange-500" },
       ]
     },
@@ -23,19 +23,19 @@ const Skills = () => {
       skills: [
         { name: "ReactJS", level: 90, color: "from-cyan-500 to-blue-500" },
         { name: "NextJS", level: 85, color: "from-gray-800 to-gray-600" },
-        { name: "Redux Toolkit", level: 80, color: "from-purple-600 to-pink-600" },
+        { name: "Redux Toolkit", level: 80, color: "from-blue-600 to-cyan-600" },
         { name: "Zustand", level: 75, color: "from-orange-500 to-red-500" },
         { name: "React Testing Library", level: 80, color: "from-green-500 to-teal-500" },
-        { name: "SASS", level: 85, color: "from-pink-500 to-purple-500" },
+        { name: "SASS", level: 85, color: "from-teal-500 to-blue-500" },
       ]
     },
     {
       title: t('skills.backend'),
       icon: "⚙️",
       skills: [
-        { name: "Web API", level: 95, color: "from-blue-500 to-purple-500" },
-        { name: "MVC", level: 90, color: "from-indigo-500 to-purple-500" },
-        { name: "Entity Framework", level: 90, color: "from-purple-500 to-pink-500" },
+        { name: "Web API", level: 95, color: "from-blue-500 to-cyan-500" },
+        { name: "MVC", level: 90, color: "from-indigo-500 to-blue-500" },
+        { name: "Entity Framework", level: 90, color: "from-blue-500 to-teal-500" },
         { name: "Dapper", level: 85, color: "from-green-500 to-blue-500" },
         { name: "RabbitMQ", level: 75, color: "from-orange-500 to-red-500" },
         { name: "SignalR", level: 70, color: "from-cyan-500 to-teal-500" },
@@ -45,12 +45,12 @@ const Skills = () => {
       title: t('skills.architecture'),
       icon: "🏗️",
       skills: [
-        { name: "Microservices", level: 85, color: "from-purple-500 to-indigo-500" },
+        { name: "Microservices", level: 85, color: "from-blue-500 to-indigo-500" },
         { name: "Domain-Driven Design", level: 80, color: "from-blue-500 to-cyan-500" },
         { name: "SOLID Principles", level: 90, color: "from-green-500 to-teal-500" },
-        { name: "Dependency Injection", level: 90, color: "from-purple-600 to-pink-600" },
+        { name: "Dependency Injection", level: 90, color: "from-blue-600 to-cyan-600" },
         { name: "Factory Pattern", level: 85, color: "from-orange-500 to-red-500" },
-        { name: "Hexagonal Architecture", level: 75, color: "from-indigo-500 to-purple-500" },
+        { name: "Hexagonal Architecture", level: 75, color: "from-indigo-500 to-blue-500" },
       ]
     },
     {
@@ -70,7 +70,7 @@ const Skills = () => {
       skills: [
         { name: "Azure", level: 85, color: "from-blue-500 to-cyan-500" },
         { name: "AWS", level: 70, color: "from-orange-500 to-yellow-500" },
-        { name: "Kubernetes", level: 75, color: "from-blue-600 to-purple-600" },
+        { name: "Kubernetes", level: 75, color: "from-blue-600 to-teal-600" },
         { name: "Git Flow", level: 90, color: "from-gray-700 to-gray-500" },
         { name: "Azure DevOps", level: 85, color: "from-blue-500 to-indigo-500" },
         { name: "GitLab", level: 80, color: "from-orange-600 to-red-600" },
@@ -83,7 +83,7 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('skills.title')} <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Skills</span>
+            {t('skills.title')} <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Skills</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {t('skills.subtitle')}
@@ -170,7 +170,7 @@ const Skills = () => {
                     <span className="text-blue-400 font-medium">{t('skills.advanced')}</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" style={{ width: '90%' }}></div>
+                    <div className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full" style={{ width: '90%' }}></div>
                   </div>
                 </div>
               </div>

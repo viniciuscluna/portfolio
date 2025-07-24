@@ -11,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/vl_logo2.png" />
       </Head>
-      <main>
+      <main className="w-full overflow-x-hidden">
         <Header />
         <Content />
       </main>

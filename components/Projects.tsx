@@ -9,7 +9,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('projects.title')} <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Featured</span>
+            {t('projects.title')} <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Featured</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {t('projects.subtitle')}
@@ -19,10 +19,10 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Project 1 - Portfolio */}
           <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
               <div className="mb-6 rounded-xl overflow-hidden bg-white/10 p-4">
-                <div className="w-full h-48 flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg">
+                <div className="w-full h-48 flex items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
                   <span className="text-4xl">💼</span>
                 </div>
               </div>
@@ -32,8 +32,8 @@ const Projects = () => {
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">Next.js</span>
-                <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">TypeScript</span>
-                <span className="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-medium">Tailwind</span>
+                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">TypeScript</span>
+                <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-medium">Tailwind</span>
               </div>
               <div className="flex space-x-4">
                 <a
@@ -70,7 +70,7 @@ const Projects = () => {
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">Next.js</span>
-                <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">React Query</span>
+                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">React Query</span>
                 <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium">TypeScript</span>
               </div>
               <div className="flex space-x-4">
@@ -78,7 +78,7 @@ const Projects = () => {
                   href="https://react-harry-app.vercel.app/"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition-colors duration-200"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
                 >
                   {t('projects.viewProject')}
                   <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
@@ -187,7 +187,7 @@ const Projects = () => {
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">TypeScript</span>
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">Next.js</span>
+              <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">Next.js</span>
               <span className="px-3 py-1 bg-black/20 text-gray-300 rounded-full text-xs font-medium">Vercel</span>
             </div>
             <div className="flex gap-4">
@@ -195,7 +195,7 @@ const Projects = () => {
                 href="https://smart-oficina-ui.vercel.app"
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium transition-colors duration-200"
+                className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
               >
                 {t('projects.liveDemo')}
                 <svg className="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
@@ -216,10 +216,10 @@ const Projects = () => {
 
         {/* Project 6 - DDD Sample */}
         <div className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div className="relative z-10">
             <div className="mb-6 rounded-xl overflow-hidden bg-white/10 p-4 flex items-center justify-center">
-              <div className="w-full h-48 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg flex items-center justify-center">
+              <div className="w-full h-48 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-lg flex items-center justify-center">
                 <span className="text-white text-xl font-bold">DDD</span>
               </div>
             </div>
@@ -228,7 +228,7 @@ const Projects = () => {
               {t('projects.ddd.description')}
             </p>
             <div className="flex flex-wrap gap-2 mb-6">
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">C#</span>
+              <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">C#</span>
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">.NET</span>
               <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs font-medium">DDD</span>
             </div>
