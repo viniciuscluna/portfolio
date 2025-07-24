@@ -16,13 +16,47 @@ body {
 	box-sizing: border-box;
 }
 
-/* Custom Animation Delays */
-.animation-delay-2000 {
-	animation-delay: 2s;
+/* Custom Animation Delays - Disabled on mobile for performance */
+@media (min-width: 640px) {
+	.animation-delay-2000 {
+		animation-delay: 2s;
+	}
+
+	.animation-delay-4000 {
+		animation-delay: 4s;
+	}
 }
 
-.animation-delay-4000 {
-	animation-delay: 4s;
+/* Mobile performance: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+	.animation-delay-2000,
+	.animation-delay-4000 {
+		animation: none;
+	}
+	
+	.animate-pulse,
+	.animate-bounce {
+		animation: none;
+	}
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 639px) {
+	/* Disable expensive animations on mobile */
+	.animate-pulse {
+		animation: none;
+	}
+	
+	/* Reduce motion intensity */
+	* {
+		animation-duration: 0.5s !important;
+		animation-iteration-count: 1 !important;
+	}
+	
+	/* Optimize backdrop filters for mobile */
+	.glass {
+		backdrop-filter: blur(8px) saturate(150%);
+	}
 }
 
 /* Glassmorphism utilities */
