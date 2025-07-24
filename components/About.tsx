@@ -1,29 +1,9 @@
-import React, { useState, useEffect } from "react";
-import TextTransition, { presets } from "react-text-transition";
+import React from "react";
 import Contact from "./Contact";
-import classNames from "classnames";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const About = () => {
-  const [index, setIndex] = useState(0);
   const { t, language } = useLanguage();
-
-  const TEXTS = [
-    t('hero.name'),
-    t('hero.role'),
-    `${t('hero.currentCompany')} Engineer`,
-    ".NET & Go Specialist",
-    "React Developer",
-    "Software Architect",
-  ];
-
-  useEffect(() => {
-    const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
-      3000 // every 3 seconds
-    );
-    return () => clearTimeout(intervalId);
-  }, []);
 
   return (
     <section
@@ -46,15 +26,15 @@ const About = () => {
             <span className="text-white">{t('hero.greeting')}</span>
           </h1>
           <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center">
-            <TextTransition
-              className="text-2xl sm:text-4xl md:text-6xl font-black bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 bg-clip-text text-transparent"
-              springConfig={presets.wobbly}
-              inline={true}
-              direction="up"
-            >
-              {TEXTS[index % TEXTS.length]}
-            </TextTransition>
+            <h2 className="text-2xl sm:text-4xl md:text-6xl font-black">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 bg-clip-text text-transparent animate-pulse">
+                {t('hero.name')}
+              </span>
+            </h2>
           </div>
+          <p className="text-xl sm:text-2xl md:text-3xl text-cyan-400 font-semibold mt-2">
+            {t('hero.role')} & Software Architect
+          </p>
         </div>
 
         {/* Subtitle */}
