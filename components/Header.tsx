@@ -1,93 +1,216 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MenuItem from "./MenuItem";
 import Image from "next/image";
 import classNames from "classnames";
+import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Header = () => {
   const [currentMenu, setCurrentMenu] = useState<number>(0);
   const [menuOpened, setMenuOpened] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Auto-detect current section based on scroll position
+  useEffect(() => {
+    const sections = [
+      { id: 'home', index: 0 },
+      { id: 'about', index: 1 },
+      { id: 'skills', index: 2 },
+      { id: 'career', index: 3 },
+      { id: 'projects', index: 4 },
+      { id: 'contact', index: 5 }
+    ];
+
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 100; // Offset for header
+      
+      // Find the current section based on scroll position
+      let currentSection = sections[0]; // Default to home
+      
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          if (scrollPosition >= offsetTop) {
+            currentSection = section;
+          }
+        }
+      });
+      
+      setCurrentMenu(currentSection.index);
+    };
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScrollSpy);
+    
+    // Call once to set initial state
+    handleScrollSpy();
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollSpy);
+    };
+  }, []);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center">
-          <Image
-            width={40}
-            height={40}
-            className="h-8 mr-3"
-            src="/assets/images/vllogo.png"
-            alt="Vinícius Luna"
-          />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Vinícius Luna
-          </span>
-        </a>
-        <div className="flex md:order-2">
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-            onClick={() => setMenuOpened(prev => !prev)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-6 h-6"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <div
-          className={classNames(
-            "items-center justify-between w-full md:flex md:w-auto md:order-1",
-            menuOpened ? "" : "hidden"
-          )}
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
+    <nav className={classNames(
+      "fixed w-full z-50 top-0 left-0 transition-all duration-300",
+      scrolled 
+        ? "bg-slate-900/95 backdrop-blur-md border-b border-white/10 shadow-lg" 
+        : "bg-transparent"
+    )}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href="#home" className="flex items-center space-x-3 group">
+            <Image
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full ring-2 ring-blue-500/50 group-hover:ring-blue-400 transition-all duration-300"
+              src="/assets/images/vl_logo2.png"
+              alt="Vinícius Luna"
+            />
+            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+              Vinícius Luna
+            </span>
+          </a>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <div className="flex items-baseline space-x-8">
               <MenuItem
                 sectionName="home"
-                menuName="Home"
+                menuName={t('nav.home')}
                 setMenu={() => setCurrentMenu(0)}
                 isSelected={currentMenu === 0}
               />
-            </li>
-            <li>
               <MenuItem
-                sectionName="career"
-                menuName="Career"
+                sectionName="about"
+                menuName={t('nav.about')}
                 setMenu={() => setCurrentMenu(1)}
                 isSelected={currentMenu === 1}
               />
-            </li>
-            <li>
               <MenuItem
                 sectionName="skills"
-                menuName="Skills"
+                menuName={t('nav.skills')}
                 setMenu={() => setCurrentMenu(2)}
                 isSelected={currentMenu === 2}
               />
-            </li>
-            <li>
               <MenuItem
-                sectionName="projects"
-                menuName="Projects"
+                sectionName="career"
+                menuName={t('nav.career')}
                 setMenu={() => setCurrentMenu(3)}
                 isSelected={currentMenu === 3}
               />
-            </li>
-          </ul>
+              <MenuItem
+                sectionName="projects"
+                menuName={t('nav.projects')}
+                setMenu={() => setCurrentMenu(4)}
+                isSelected={currentMenu === 4}
+              />
+              <MenuItem
+                sectionName="contact"
+                menuName={t('nav.contact')}
+                setMenu={() => setCurrentMenu(5)}
+                isSelected={currentMenu === 5}
+              />
+            </div>
+            <LanguageSelector />
+          </div>
+
+          {/* Mobile menu button and language selector */}
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageSelector />
+            <button
+              onClick={() => setMenuOpened(!menuOpened)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-purple-400 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 transition-all duration-300"
+            >
+              <span className="sr-only">Open main menu</span>
+              {!menuOpened ? (
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={classNames(
+        "md:hidden transition-all duration-300 ease-in-out",
+        menuOpened 
+          ? "max-h-80 opacity-100" 
+          : "max-h-0 opacity-0 overflow-hidden"
+      )}>
+        <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-900/95 backdrop-blur-md border-t border-white/10">
+          <MenuItem
+            sectionName="home"
+            menuName={t('nav.home')}
+            setMenu={() => {
+              setCurrentMenu(0);
+              setMenuOpened(false);
+            }}
+            isSelected={currentMenu === 0}
+          />
+          <MenuItem
+            sectionName="about"
+            menuName={t('nav.about')}
+            setMenu={() => {
+              setCurrentMenu(1);
+              setMenuOpened(false);
+            }}
+            isSelected={currentMenu === 1}
+          />
+          <MenuItem
+            sectionName="skills"
+            menuName={t('nav.skills')}
+            setMenu={() => {
+              setCurrentMenu(2);
+              setMenuOpened(false);
+            }}
+            isSelected={currentMenu === 2}
+          />
+          <MenuItem
+            sectionName="career"
+            menuName={t('nav.career')}
+            setMenu={() => {
+              setCurrentMenu(3);
+              setMenuOpened(false);
+            }}
+            isSelected={currentMenu === 3}
+          />
+          <MenuItem
+            sectionName="projects"
+            menuName={t('nav.projects')}
+            setMenu={() => {
+              setCurrentMenu(4);
+              setMenuOpened(false);
+            }}
+            isSelected={currentMenu === 4}
+          />
+          <MenuItem
+            sectionName="contact"
+            menuName={t('nav.contact')}
+            setMenu={() => {
+              setCurrentMenu(5);
+              setMenuOpened(false);
+            }}
+            isSelected={currentMenu === 5}
+          />
         </div>
       </div>
     </nav>
