@@ -1,94 +1,111 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../pages/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-bounce-slow: bounce 3s infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  --font-display: Inter, system-ui, sans-serif;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
 
 html {
-	scroll-behavior: smooth;
-	font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 *, *::before, *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Custom Animation Delays - Disabled on mobile for performance */
 @media (min-width: 640px) {
-	.animation-delay-2000 {
-		animation-delay: 2s;
-	}
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
 
-	.animation-delay-4000 {
-		animation-delay: 4s;
-	}
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }
 
 /* Mobile performance: Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-	.animation-delay-2000,
-	.animation-delay-4000 {
-		animation: none;
-	}
-	
-	.animate-pulse,
-	.animate-bounce {
-		animation: none;
-	}
+  .animation-delay-2000,
+  .animation-delay-4000 {
+    animation: none;
+  }
+
+  .animate-pulse,
+  .animate-bounce {
+    animation: none;
+  }
 }
 
 /* Mobile performance optimizations */
 @media (max-width: 639px) {
-	/* Disable expensive animations on mobile */
-	.animate-pulse {
-		animation: none;
-	}
-	
-	/* Reduce motion intensity */
-	* {
-		animation-duration: 0.5s !important;
-		animation-iteration-count: 1 !important;
-	}
-	
-	/* Optimize backdrop filters for mobile */
-	.glass {
-		backdrop-filter: blur(8px) saturate(150%);
-	}
+  /* Disable expensive animations on mobile */
+  .animate-pulse {
+    animation: none;
+  }
+
+  /* Reduce motion intensity */
+  * {
+    animation-duration: 0.5s !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Optimize backdrop filters for mobile */
+  .glass {
+    backdrop-filter: blur(8px) saturate(150%);
+  }
 }
 
 /* Glassmorphism utilities */
 .glass {
-	backdrop-filter: blur(16px) saturate(180%);
-	background-color: rgba(255, 255, 255, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #1e1e1e;
+  background: #1e1e1e;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: linear-gradient(45deg, #3b82f6, #06b6d4);
-	border-radius: 4px;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(45deg, #2563eb, #0891b2);
+  background: linear-gradient(45deg, #2563eb, #0891b2);
 }
 
 /* Section spacing */
 section {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
